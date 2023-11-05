@@ -1,0 +1,8 @@
+name: my-node-app
+image: node:14
+command: bash
+workdir: /app
+sync:
+  - .:/app
+forward:
+  - 8080:80
