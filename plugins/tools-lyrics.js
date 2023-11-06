@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
-const getLyrics = require("./getLyrics");
-const getSong = require("./getSong");
+const getLyrics = require("../lib/getLyrics");
+const getSong = require("../lib/getSong");
 
 let handler = async (m, { conn, text }) => {
   let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : '';
