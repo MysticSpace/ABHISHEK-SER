@@ -178,41 +178,18 @@ ${readMore}
 ╰─────────────⦁
 
 ╭───❮ *𝙰𝙽𝙸𝙼𝙴 𝙼𝙴𝙽𝚄* ❯
-│ _${usedPrefix}waifu_
-│ _${usedPrefix}neko_
-│ _${usedPrefix}loli_
-│ _${usedPrefix}naruto_
-│ _${usedPrefix}itachi_
-│ _${usedPrefix}akira_
-│ _${usedPrefix}asuna_
-│ _${usedPrefix}akiyama_
-│ _${usedPrefix}boruto_
-│ _${usedPrefix}hornycard_
-│ _${usedPrefix}ayuzawa_
-│ _${usedPrefix}anna_
-│ _${usedPrefix}chiho_
-│ _${usedPrefix}chitoge_
-│ _${usedPrefix}deidara_
-│ _${usedPrefix}erza_
-│ _${usedPrefix}elaina_
-│ _${usedPrefix}emilia_
-│ _${usedPrefix}hestia_
-│ _${usedPrefix}hinata_
-│ _${usedPrefix}inori_
-│ _${usedPrefix}isuzu_
-│ _${usedPrefix}kagura_
-│ _${usedPrefix}kaori_
-│ _${usedPrefix}keneki_
-│ _${usedPrefix}kurumi_
-│ _${usedPrefix}madara_
-│ _${usedPrefix}mikasa_
-│ _${usedPrefix}miku_
-│ _${usedPrefix}minato_
-│ _${usedPrefix}nezuko_
-│ _${usedPrefix}sagiri_
-│ _${usedPrefix}sasuke_
-│ _${usedPrefix}sakura_
-│ _${usedPrefix}kotori_
+│ _${usedPrefix}waifu_     _${usedPrefix}neko_     _${usedPrefix}loli_
+│ _${usedPrefix}naruto_    _${usedPrefix}itachi_   _${usedPrefix}akira_					
+│ _${usedPrefix}asuna_     _${usedPrefix}akiyama_  _${usedPrefix}boruto_
+│ _${usedPrefix}hornycard_ _${usedPrefix}ayuzawa_  _${usedPrefix}anna_
+│ _${usedPrefix}chiho_     _${usedPrefix}chitoge_  _${usedPrefix}deidara_
+│ _${usedPrefix}erza_      _${usedPrefix}elaina_   _${usedPrefix}emilia_
+│ _${usedPrefix}hestia_    _${usedPrefix}hinata_   _${usedPrefix}inori_ 
+│ _${usedPrefix}isuzu_     _${usedPrefix}kagura_   _${usedPrefix}kaori_
+│ _${usedPrefix}keneki_    _${usedPrefix}kurumi_   _${usedPrefix}madara_ 
+│ _${usedPrefix}mikasa_    _${usedPrefix}miku_     _${usedPrefix}minato_
+│ _${usedPrefix}nezuko_    _${usedPrefix}sagiri_   _${usedPrefix}sasuke_
+│ _${usedPrefix}sakura_    _${usedPrefix}kotori_ 
 ╰─────────────⦁
 
 ╭───❮ *𝙶𝙰𝙼𝙴 𝙼𝙴𝙽𝚄* ❯
@@ -272,6 +249,10 @@ ${readMore}
 ╰────────────⦁─────────────────⦁`
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react('📃')
+m.react('Ⓜ️')
+m.react('➡️')
+m.react('🆕')
+m.react('🔼')
 }
 handler.help = ['allmenu']
 handler.tags = ['main']
