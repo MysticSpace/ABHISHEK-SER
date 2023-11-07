@@ -1,42 +1,23 @@
-import fetch from 'node-fetch';
-const getLyrics = require("../lib/getLyrics");
-const getSong = require("../lib/getSong");
+import { lyrics, lyricsv2 } from '@bochilteam/scraper'
 
-let handler = async (m, { conn, text }) => {
-  let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : '';
-  if (!teks) throw `🎯 Enter The Name Of The Song`;
-  try {
-    const options = {
-      apiKey: '8MEkGlN9IxdyJlSdd14DamKGSraIil-2XV6h3RAMp-ce2vHMwPX150lYxuTyjPsf',
-      title: teks,
-      artist: '',
-      optimizeQuery: true,
-    };
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : ''
+    if (!teks) throw `Use example ${usedPrefix}${command} hallo`
+    const result = await lyricsv2(teks).catch(async _ => await lyrics(teks))
+    m.reply(`
+Lyrics *${result.title}*
+Author ${result.author}
 
-    // Use the getLyrics function to fetch lyrics
-    const lyrics = await getLyrics(options);
 
-    // Use the getSong function to fetch song data
-    const song = await getSong(options);
+${result.lyrics}
 
-    // Display the song information and lyrics
-    const message = `
-▢ *${song.title}*
-*${song.author}*\n
-${lyrics}
-    `;
 
-    conn.sendFile(m.chat, song.thumbnail, null, message, m);
-    m.react('🎵'); // You can use the desired emoji for reactions
+Url ${result.link}
+`.trim())
+}
 
-  } catch (e) {
-    m.react('❌'); // You can use the desired emoji for error reactions
-    console.error(e);
-  }
-};
+handler.help = ['lirik'].map(v => v + ' <Apa>')
+handler.tags = ['internet']
+handler.command = /^(lyrics|lyric)$/i
 
-handler.help = ['lyrics'];
-handler.tags = ['tools'];
-handler.command = ['letra', 'lyrics', 'letras'];
-
-export default handler;
+export default handler
